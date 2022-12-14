@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create person</title>
+  <link rel="stylesheet" href="styles.css" />
+
+</head>
+
+<body>
+
+<nav class="navheight">
+  <div class="nav-center">
+    <div class="nav-header">
+      <svg height="140" width="140" class="sot2">            
+        <defs>
+          <filter id="f3" x="0" y="0" width="200%" height="200%">
+            <feOffset result="offOut" in="SourceAlpha" dx="20" dy="20" />
+            <feGaussianBlur result="blurOut" in="offOut" stdDeviation="10" />
+            <feBlend in="SourceGraphic" in2="blurOut" mode="normal" />
+          </filter>
+        </defs>
+        <rect width="90" height="70" stroke="white" stroke-width="2"
+        fill="grey" filter="url(#f3)" />
+      </svg>
+      
+       <button class="nav-toggle">
+        <i class="fas fa-bars"></i>
+      </button>
+      
+    </div>
+    <ul class="links">
+      <li>
+        <a href="/">Home</a>
+
+      </li>
+      <li>
+        <a href="#">Lights</a>
+      </li>
+      <li>
+        <a href="#">Camera</a>
+      </li>
+      <li>
+      <a href="/create_person">Create Person Form</a>
+        </li>
+    </ul>
+    <ul class="social-icons">
+      <li>
+        <a href="https://www.facebook.com">
+          <i class="fab fa-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a href="https://www.twitter.com">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+                <li>
+        <a href="https://www.linkedin.com">
+          <i class="fab fa-linkedin"></i>
+        </a>
+      </li>
+            </ul>
+  </div>
+</nav>
+
+  <br>
+  <div>
+      <h3 style="text-align: center;">welcome Cast And Crew</h4>
+
+  </div>
+<br>
+
+<article class="review">
+  <div style="margin-right: 10px;float:right; color:white;"> 
+    <h3>It's Show time!</h3>
+    <h4>Please Enter your First and Last Name</h4>
+    <h4>Enter Category: Dancer, Singer, Tech Crew etc</h4>
+  </div>
+
+  <div class="container">
+ 
+  <br>
+  <form id="create_person" class="column left"  autocomplete="off">
+    <label>Name: </label>
+    <input type="text" name="name" style="background:transparent; color:white;  " required>
+<br>
+<br>
+    <label>Talent / Tech Category:</label>
+    <input type="text" name="email"  style="background:transparent; color:white;  " required>
+    <br><br>
+    <button type="submit" style="background:transparent; border-style: solid;
+    border-color: grey; color:white; width: 520px; padding: 5px;">Submit</button>
+
+  </div>
+  </form>
+
+  <script>
+    const form = document.getElementById("create_person");
+    form.addEventListener("submit", (event) => {
+      event.preventDefault();
+
+      fetch("/api/people", {
+        method: "POST",
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          name: event.target.name.value,
+          email: event.target.email.value
+        })
+      }).then(res => res.json()).then(data => {
+        console.log(data);
+        window.location = "/"
+      })
+    })
+
+
+    const pullTodos = document.getElementById("pullTodos");
+ pullTodos.addEventListener("submit", (event) => {
+   event.preventDefault();
+
+   fetch("/api/todos", {
+     method: "POST",
+     headers: {
+       'Content-Type': 'application/json'
+     },
+     body: JSON.stringify({
+       name: event.target.name.value,
+       completed: event.target.completed.value
+     })
+   }).then(res => res.json()).then(data => {
+     console.log(data);
+     window.location = "/"
+   })
+ })
+  </script>
+</body>
+
+</html>
