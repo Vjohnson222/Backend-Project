@@ -1,23 +1,19 @@
+<!-- //This is done and it's working well with the database, The email area is not coming through on the submit -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Home</title>
-  <link
-  rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
-/>
-<link rel="stylesheet" href="styles.css" />
-
+  <title>Create person</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body>
-  <!-- Nav Starts Here -->
+
 <nav class="navheight">
   <div class="nav-center">
-    <!-- nav header -->
     <div class="nav-header">
       <svg height="140" width="140" class="sot2">            
         <defs>
@@ -30,15 +26,16 @@
         <rect width="90" height="70" stroke="white" stroke-width="2"
         fill="grey" filter="url(#f3)" />
       </svg>
+      
        <button class="nav-toggle">
         <i class="fas fa-bars"></i>
       </button>
       
     </div>
-    <!-- links -->
-    <ul class="links review3">
+    <ul class="links">
       <li>
-        <a href="index.html">Home</a>
+        <a href="/">Home</a>
+
       </li>
       <li>
         <a href="#">Lights</a>
@@ -47,155 +44,87 @@
         <a href="#">Camera</a>
       </li>
       <li>
-        <div>
-            <span><a href="/create_person" >Create person Form</a></span>
-           
-          </div>
-      </li>
-      
+      <a href="/create_person">Create Person Form</a>
+        </li>
     </ul>
-    <!-- social media -->
-    <br>
     <ul class="social-icons">
       <li>
-        <a href="https://www.facebook.com" target="_blank">
+        <a href="https://www.facebook.com">
           <i class="fab fa-facebook"></i>
         </a>
       </li>
       <li>
-        <a href="https://www.twitter.com" target="_blank">
+        <a href="https://www.twitter.com">
           <i class="fab fa-twitter"></i>
         </a>
       </li>
                 <li>
-        <a href="https://www.linkedin.com" target="_blank">
+        <a href="https://www.linkedin.com">
           <i class="fab fa-linkedin"></i>
         </a>
       </li>
             </ul>
   </div>
 </nav>
-<!-- Nav ends Here  -->
+<!-- -------------------------------------------------- -->
 
-<br>
+  <br>
   <div>
-      <h3 style="text-align: center; ">Cast And Crew</h3>
+      <h3 style="text-align: center;">welcome Cast And Crew</h4>
 
   </div>
 <br>
-<article class="review">
-      
 
-  <h3 class="script" style="margin-left:30px;  font-family: 'Dancing Script';">Talent<span style="color:transparent;">........................................</span> Tasks</h5>
-  <hr> <br>
-  <h6 style=" color:white;">Select Name to see assigned tasks</h6>
+<!-- Hmmm not sure of the purpose you were serving below  -->
+<article class="review">  
 
-  <div class="column left pointer" id="people"> </div>
-
-  <div id="add_todos" class="column mid" style="display:none">
-    <br><br><br>
-    <h5 style="font-style: italic;">Add to: <span id="person_name"></span></h5>
-    <br>
-    <form id="add_todos_form" autocomplete="off">
-      <!-- <label>Task Name:</label> -->
-      <input name="name" type="text"  class = "search-clear" class="button"  style="background:transparent; border-radius: 5%; padding: 1px; color:white; " placeholder="Enter Task" required>
-      
-     <button type="submit" style="background:transparent; justify-content: center; border-style: solid;
-      border-color: grey; color:white; width: 215px; padding: 1px;">Submit</button>
-  
-    </form>
+  <div style="margin-right: 10px;float:right; color:white;"> 
+    <h3>It's Show time!</h3>
+    <h4>Please Enter your First and Last Name</h4>
+    <h4>Enter Category: Dancer, Singer, Tech Crew etc</h4>
   </div>
+<!-- -------------------------------------------------------- -->
+  <!-- We have all of these style that perhaps need to go elsewhere  -->
   <br>
-  <div class="column right" id="todos"> </div>
+  <form id="create_person" class="column left"  autocomplete="off">
   
-        <div class= "sot column right">
-          <svg height="140" width="140">
-            <defs>
-              <filter id="f3" x="0" y="0" width="200%" height="200%">
-                
-                <feOffset result="offOut" in="SourceAlpha" dx="20" dy="20" />
-                <feGaussianBlur result="blurOut" in="offOut" stdDeviation="10" />
-                
-                <feBlend in="SourceGraphic" in2="blurOut" mode="normal" />
-              </filter>
-            </defs>
-            <rect width="90" height="70" stroke="white" stroke-width="2"
-            fill="grey" filter="url(#f3)" />
-          </svg>        
-    
-        </div>
-  <div id="add_todos" class="column right" style="display:none">
-    <br>
-    
-    <h4>Adding Tasks </h4>
-    <br><h4><span id="person_name"></span></h4>
-    <form id="add_todos_form" autocomplete="off">
-      <input name="name" type="text"  class = "search-clear" class="button"  style="background:transparent; color:white; " placeholder="Enter Task" required>
-         <button type="submit" id="addBtn" class="button" style="background:transparent; border:solid blue 1px ; color:grey; left:400px;" >Submit</button>
-    </form>
+    <label>Name: </label>
+    <input type="text" name="name" style="background:transparent; color:white;  " required>
+<br>
+<br>
+    <label>Talent / Tech Category:</label>
+    <input type="text" name="email"  style="background:transparent; color:white;  " required>
+ 
+ 
+    <br><br>
+    <button type="submit" style="background:transparent; border-style: solid;
+    border-color: grey; color:white; width: 520px; padding: 5px;">Submit</button>
 
-  </div>
-
-  <br>
   
+  </form>
+
 </article>
-
+ <!-- #1 //The script is done  -->
+    <!-- Wow it's identical  -->
   <script>
-    const people = document.getElementById('people');
-    const todos = document.getElementById('todos');
-    const add_todos = document.getElementById('add_todos');
-    const person_name = document.getElementById('person_name');
-    const add_todos_form = document.getElementById('add_todos_form');
-    let current_person_id = null;
+    const form = document.getElementById("create_person");
+    form.addEventListener("submit", (event) => {
+      event.preventDefault();
 
-    fetch("/api/people").then(res => res.json()).then(data => {
-      console.log(data);
-
-      people.innerHTML = `<ul>${renderPeople(data)}</ul>`;
+      fetch("/api/people", {
+        method: "POST",
+        headers: {
+          'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: event.target.name.value,
+          email: event.target.email.value
+        })
+      }).then(res => res.json()).then(data => {
+        console.log(data);
+        window.location = "./create_person/index.html";
+      })
     })
 
-    function renderPeople(people) {
-      return people.map((person) => {
-        return `
-        <li class="person" onclick="getTodos('${person.id}', '${person.name}')">${person.name}</li>
-        `
-      }).join('')
-    }
-
-const todoList = document.getElementById('todoList');
-
-
-fetch("/api/todos").then(res => res.json()).then(data => {
-  console.log(data);
-
-  todos.innerHTML = `<ul>${renderTodoList(data)}</ul>`;
-})
-  function renderTodoList(todoList) {
-  return todoList.map((todo) => {
-    return `
-    <li class="todo" onclick="getTodos('${todo.id}', '${todo.name}')">${todo.name}</li>
-    `
-  }).join('')
-}
-
-    function getTodos(id, name) {
-      current_person_id = id;
-      person_name.innerHTML = name;
-      add_todos.style.display = "block";
-      console.log(id)
-
-      fetch(`/api/people/${id}/todos`).then(res => res.json()).then(data => {
-        console.log(data)
-        todos.innerHTML = `<div>${renderTodos(data.todos)}</div>`
-      })
-    }
-
-
-const pullTodos = document.getElementById("pullTodos");
- 
- 
- pullTodos.addEventListener("submit", (event) => {
-   event.preventDefault();
 
    fetch("/api/todos", {
      method: "POST",
@@ -208,35 +137,9 @@ const pullTodos = document.getElementById("pullTodos");
      })
    }).then(res => res.json()).then(data => {
      console.log(data);
-     window.location = "/"
-   })
- })
-
-    add_todos_form.addEventListener("submit", (event) => {
-      event.preventDefault();
-
-      fetch(`/api/todos/${current_person_id}/todos`, {
-        method: 'POST',
-        headers: { 'Content-Type': "application/json" },
-        body: JSON.stringify({
-          name: event.target.name,
-         
-        })
-      })
-    })
-    function renderTodos(todos) {
-      return todos.map((todo) => {
-        return `
-        <div>
-          <span>  "${todo.name}"</span><br>
-         
-        </div>
-        `
-      }).join("")
-    }
-
+     window.location = "/create_person/index.html";   })
+ 
   </script>
-
 </body>
 
 </html>

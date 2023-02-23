@@ -13,7 +13,7 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
       models.person.hasMany(models.todo, {
         foreignKey: {
-          name: 'person_id'
+          name:'person_id'
         }
       })
     }
@@ -27,4 +27,3 @@ module.exports = (sequelize, DataTypes) => {
   });
   return person;
 };
-//Done

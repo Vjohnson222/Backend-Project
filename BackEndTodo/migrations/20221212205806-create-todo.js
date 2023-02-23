@@ -1,4 +1,5 @@
 'use strict';
+/** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
     await queryInterface.createTable('todos', {
@@ -16,7 +17,6 @@ module.exports = {
         allowNull: false,
         type: Sequelize.INTEGER,
         references: {
-          // check Later
           model: 'people',
           key: 'id'
         }
@@ -24,6 +24,9 @@ module.exports = {
       completed: {
         allowNull: false,
         type: Sequelize.BOOLEAN
+      },
+      type: {
+        type: Sequelize.STRING
       },
       createdAt: {
         allowNull: false,

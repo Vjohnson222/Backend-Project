@@ -13,11 +13,11 @@ module.exports = {
     */
     let people = [];
 
-    for (let i = 1; i < 30; i++) {
+    for (let i = 1; i < 10; i++) {
 
       people.push({
         name: `person ${i}`,
-        email: `/ ${i}`,
+        email: `email ${i}@yahoo.com`,
         createdAt: new Date().toISOString(),
         updatedAt: new Date().toISOString()
       })
@@ -25,7 +25,7 @@ module.exports = {
 
     let todos = [];
 
-    for (let i = 1; i < 3; i++) {
+    for (let i = 1; i < 10; i++) {
 
       todos.push({
         name: `person 1 #${i}`,
@@ -37,7 +37,7 @@ module.exports = {
     for (let i = 1; i < 3; i++) {
 
       todos.push({
-        name: `person 1 #${i}`,
+        name: `todo ${i}`,
               person_id: 2,
         completed: false,
         createdAt: new Date().toISOString(),
@@ -56,7 +56,6 @@ module.exports = {
      * Example:
      * await queryInterface.bulkDelete('People', null, {});
      */
-    await queryInterface.bulkDelete('todos', null, {});
-    await queryInterface.bulkDelete('people', null, {});
+   
   }
 };

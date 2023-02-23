@@ -17,6 +17,7 @@ module.exports = (sequelize, DataTypes) => {
     name: DataTypes.STRING,
     person_id: DataTypes.INTEGER,
     completed: DataTypes.BOOLEAN
+   
   }, {
     sequelize,
     modelName: 'todo',
