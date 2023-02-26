@@ -81,6 +81,7 @@
     box-sizing: border-box;
   }
   body {
+    background-image: url("a.png");
     font-family: var(--ff-secondary);
     background: rgb(157, 156, 156);
     color: var(--clr-grey-1);
@@ -92,16 +93,6 @@
   }
   a {
     text-decoration: none;
-  }
-  h1,
-  h2,
-  h3,
-  h4 {
-    letter-spacing: var(--spacing);
-    text-transform: capitalize;
-    line-height: 1.25;
-    margin-bottom: 0.75rem;
-    font-family: var(--ff-primary);
   }
   h1 {
     font-size: 3rem;
@@ -134,6 +125,8 @@
     }
     body {
       font-size: 1rem;
+      background-image: url("a.png");
+
     }
     h1,
     h2,
@@ -163,14 +156,12 @@
   nav {
     background: grey;
     box-shadow:black;
-    transition-duration: 15s;
-  
+    transition-duration: 15s;  
   }
   .nav-header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 1rem;
   }
   .nav-toggle {
     font-size: 1.5rem;
@@ -188,17 +179,15 @@
     color: var(--clr-primary-1);
     transform: rotate(90deg);
   }
-  .logo {
-    height: 40px;
-  }
   .links a {
     color: var(--clr-grey-3);
-    font-size: 1rem;
-    text-transform: capitalize;
+    font-size: 1.5rem;
     letter-spacing: var(--spacing);
     display: block;
-    padding: 0.5rem 1rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
     transition: var(--transition);
+    color: white;
   }
   .links a:hover {
     background: var(--clr-primary-8);
@@ -213,9 +202,7 @@
     overflow: hidden;
     transition: var(--transition);
   }
-  .show-links {
-    height: 10rem;
-  }
+ 
   @media screen and (min-width: 800px) {
     .nav-center {
       max-width: 1170px;
@@ -236,7 +223,6 @@
       display: flex;
     }
     .links a {
-      padding: 40px;
       margin: 0 0.5rem;
     }
     .links a:hover {
@@ -255,22 +241,7 @@
       color: var(--clr-primary-7);
     }
   }
-  .sot {
-    margin-left: 220px;
-    margin-top:-400px;
-    width: 600px;
-    height: 400px;
-    /* background-color: grey; */
-    animation-name: spin;
-    animation-duration: 50000ms;
-    animation-iteration-count: infinite;
-    animation-timing-function: linear; 
-    
-    /* transform: rotate(3deg); */
-     /* transform: rotate(0.3rad);/ */
-     /* transform: rotate(3grad); */ 
-     /* transform: rotate(.03turn);  */
-  }
+
 
   @keyframes spin {
       from {
@@ -329,6 +300,8 @@
     box-sizing: border-box;
   }
   body {
+    background-image: url("a.png");
+
     font-family: var(--ff-secondary);
     background: rgb(0, 6, 14);
     color: var(--clr-grey-1);
@@ -341,13 +314,7 @@
   a {
     text-decoration: none;
   }
-  h1,h2,h3,h4 {
-    letter-spacing: var(--spacing);
-    text-transform: capitalize;
-    line-height: 1.25;
-    margin-bottom: 0.75rem;
-    font-family: var(--ff-primary);
-  }
+
   h1 { font-size: 3rem;}
   h2 {  font-size: 2rem;}
   h3 {  font-size: 1.25rem;}
@@ -370,6 +337,8 @@
       font-size: 1rem;
     }
     body {
+      background-image: url("a.png");
+
       font-size: 1rem;
     }
     h1,
@@ -410,50 +379,31 @@
   .review {
     background: rgb(35, 98, 143);
     opacity: .9;
-    /* border-radius: 10%; */
     padding: 1.5rem 2rem;
     box-shadow: var(--light-shadow);
     transition: var(--transition);
-    text-align: center;
     color: white;
     min-width: 500px;
-    min-height: 250px;
+    min-height: 550px;
     box-shadow: 0 0 400px var(--clr-primary-5);
     transition: all 1s;
-  }
-  
-  .review2 {
-    background: rgb(120, 176, 216);
-    opacity: .9;
-    /* border-radius: 10%; */
-    padding: 1.5rem 2rem;
-    box-shadow: var(--light-shadow);
-    transition: var(--transition);
-    /* text-align: center; */
-    color: white;
-    min-width: 500px;
-    /* max-height: 350px; */
-    box-shadow: 0 0 400px var(--clr-primary-5);
-    transition: all 1s;
-  }
-  
-  .sot:hover {
-    transform: rotate(90deg);
   }
   .review:hover {
     background: rgb(24, 75, 112);
   }
   
+ 
+  
+  .sot:hover {
+    transform: rotate(90deg);
+  }
+  
+  
   #author {
     margin-bottom: 0.25rem;
     color:var(--clr-primary-5);
   }
-  #job {
-    margin-bottom: 0.5rem;
-    text-transform: uppercase;
-    color: var(--clr-primary-5);
-    font-size: 0.85rem;
-  }
+
   #info {
     margin-bottom: 0.75rem;
     color: white;
@@ -479,7 +429,7 @@
     background: var(--clr-primary-5);
     color: var(--clr-primary-5);
     padding: 0.25rem 0.5rem;
-    text-transform: capitalize;
+    /* text-transform: capitalize; */
     border-radius: var(--radius);
     transition: var(--transition);
     border-color: var(--clr-primary-5);
@@ -515,4 +465,24 @@
             0 0 100px #0ff,
             0 0 150px #0ff;
         }
-  
+        .scene{
+width: 1000px;
+height: 400px;
+border-radius: 10px;
+margin-left: 10%;
+        }
+  .svg{
+    padding-top: 10px;
+    margin-bottom: -40px;
+    left: -20%;
+  }
+  .review{
+    font-family: var(--ff-secondary);
+
+    color: rgb(148, 152, 160);
+  }
+  .black{
+    background-color: black;
+    font-size: 5px;
+    color: black;
+  }

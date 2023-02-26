@@ -10,133 +10,148 @@
   href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
 />
 <link rel="stylesheet" href="styles.css" />
+<style>
+  * {
+    box-sizing: border-box;
+  }
+  
+  /* Create three equal columns that floats next to each other */
 
+  .column1 {
+    float: left;
+    width: 25.33%;
+    padding: 10px;
+    height: 300px; /* Should be removed. Only for demonstration */
+  }
+  .column {
+    float: left;
+    width: 35.33%;
+    padding: 10px;
+    height: 300px; /* Should be removed. Only for demonstration */
+  }
+  
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+  .delete-button {
+   font-size: 2px;
+  }
+  </style>
 </head>
 
+<div class="black">heyyy</div>
+
 <body>
-  <!-- Nav Starts Here -->
-<nav class="navheight">
-  <div class="nav-center">
-    <!-- nav header -->
-    <div class="nav-header">
-      <svg height="140" width="140" class="sot2">            
-        <defs>
-          <filter id="f3" x="0" y="0" width="200%" height="200%">
-            <feOffset result="offOut" in="SourceAlpha" dx="20" dy="20" />
-            <feGaussianBlur result="blurOut" in="offOut" stdDeviation="10" />
-            <feBlend in="SourceGraphic" in2="blurOut" mode="normal" />
-          </filter>
-        </defs>
-        <rect width="90" height="70" stroke="white" stroke-width="2"
-        fill="grey" filter="url(#f3)" />
-      </svg>
-       <button class="nav-toggle">
-        <i class="fas fa-bars"></i>
-      </button>
-      
-    </div>
-    <!-- links -->
-    <ul class="links review3">
-      <li>
-        <a href="index.html">Home</a>
-      </li>
-      <li>
-        <a href="#">Lights</a>
-      </li>
-      <li>
-        <a href="#">Camera</a>
-      </li>
-      <li>
-        <div>
-          <!-- #1 - identified  -->
-            <span><a href="/create_person" >Create person Form</a></span>
+  <hr>
+  <nav >
+    <div class="nav-center">
+      <!-- nav header -->
+      <div class="nav-header">
+        <svg class="svg" height="120" width="140" left="-20px">            
+          <defs>
+            <filter id="f3" x="0" y="0" width="200%" height="200%">
+              <feOffset result="offOut" in="SourceAlpha" dx="20" dy="20" />
+              <feGaussianBlur result="blurOut" in="offOut" stdDeviation="10" />
+              <feBlend in="SourceGraphic" in2="blurOut" mode="normal" />
+            </filter>
+          </defs>
+          <rect width="90" height="70" stroke="white" stroke-width="2"
+          fill="grey" filter="url(#f3)" />
+        </svg>
+         <button class="nav-toggle">
+          <i class="fas fa-bars"></i>
+        </button>
+        
+      </div>
+      <ul class="links review3">
+        <li>
+          <a href="../index.html">Home</a>
+        </li>
+        <li>
+          <a href="../index2.html">Lights</a>
+        </li>
+        <li>
+          <a href="../cam.html">Camera</a>
+        </li>
+        <li>          
+            <a href="/create_person" >Action</a>       
            
-          </div>
-      </li>
-      
-    </ul>
-    <!-- social media -->
-    <br>
-    <ul class="social-icons">
-      <li>
-        <a href="https://www.facebook.com" target="_blank">
-          <i class="fab fa-facebook"></i>
-        </a>
-      </li>
-      <li>
-        <a href="https://www.twitter.com" target="_blank">
-          <i class="fab fa-twitter"></i>
-        </a>
-      </li>
-                <li>
-        <a href="https://www.linkedin.com" target="_blank">
-          <i class="fab fa-linkedin"></i>
-        </a>
-      </li>
-            </ul>
-  </div>
-</nav>
-<!-- Nav ends Here  -->
-
+        </li>
+        
+      </ul>
+      <ul class="social-icons">
+        <li>
+          <a href="https://www.facebook.com">
+            <i class="fab fa-facebook"></i>
+          </a>
+        </li>
+        <li>
+          <a href="https://www.twitter.com">
+            <i class="fab fa-twitter"></i>
+          </a>
+        </li>
+                  <li>
+          <a href="https://www.linkedin.com">
+            <i class="fab fa-linkedin"></i>
+          </a>
+        </li>
+              </ul>
+    </div>
+  </nav>
 <br>
-  <div>
-      <h3 style="text-align: center; ">Cast And Crew</h3>
-
-  </div>
+  <div> <h3 style="text-align: center; ">Cast And Crew</h3></div>
 <br>
-<article class="review">
-      
+<div class="review">      
 
   <h3 class="script" style="margin-left:30px;  font-family: 'Dancing Script';">Talent<span style="color:transparent;">........................................</span> Tasks</h5>
   <hr> <br>
-  <h6 style=" color:white;">Select Name to see assigned tasks</h6>
+  <h4 style=" color:white;">Select Name to Assign and see individual tasks</h4>
+  <br>
 
-   <!-- #2 - identified  -->
-  <div class="column left pointer" id="people"> </div>
+   <!-- -------------------------------- Column 1 --------------------------------  -->
 
-  <!-- #4 - identified  -->
+<div class="row">
+  <div class="column1" >
+ 
+  <div  id="people"> </div>
 
-  <div id="add_todos"      class="column mid" style="display:none">
-    <br><br><br>
-     <!-- #5 - identified  Buttttt -->
-    <h5 style="font-style: italic;">Add to: <span id="person_name"></span></h5>
-    <br>
+  </div>
+  
+  <!-- -------------------------------- Column 2 -------------------------------- -->
+  
+  
+  <div class="column" >
+    
+     <div   id="todos"> </div>
 
-    <!-- #6 - identified  -->
+
+  <div id="added_todos" style="display:none">
+  </div>
+  
+  </div> <!-- Close the second column here -->
+
+  <!-- -------------------------------- Column 3 -------------------------------- -->
+
+  <div class="column" >
+        
     <form id="add_todos_form">
+      
+   
+    <h5 style="font-style: italic;">Add to: <span id="person_name"></span></h5>
+
       <label for="name">New Todo:</label>
       <input type="text" id="name" name="name" required>
       <button type="submit">Add Todo</button>
     </form>
-
-
   </div>
-  <br>
-   <!-- #3 - identified  -->
-  <div class="column right" id="todos"> </div>
+</div>
+ 
   
-        <div class= "sot column right">
-          <svg height="140" width="140">
-            <defs>
-              <filter id="f3" x="0" y="0" width="200%" height="200%">
-                
-                <feOffset result="offOut" in="SourceAlpha" dx="20" dy="20" />
-                <feGaussianBlur result="blurOut" in="offOut" stdDeviation="10" />
-                
-                <feBlend in="SourceGraphic" in2="blurOut" mode="normal" />
-              </filter>
-            </defs>
-            <rect width="90" height="70" stroke="white" stroke-width="2"
-            fill="grey" filter="url(#f3)" />
-          </svg>        
-    
-        </div>
-
-  </div>
-
-  <br>
-  
-</article>
+</div>
 <!-- Note you will need 7 todo_id here to delete anything 
 Hey also try this, try not to change your face here in fat. only on jake
 it will make the transformation make sense later
@@ -148,7 +163,7 @@ complete the server then come back here and identify everything tha got changed 
 // #1 The ID calls work very well so far
 const people = document.getElementById('people');
 const todos = document.getElementById('todos');
-const add_todos = document.getElementById('add_todos');
+const added_todos = document.getElementById('added_todos');
 const person_name = document.getElementById('person_name');
 const add_todos_form = document.getElementById('add_todos_form');
         // const change_grade_div = document.getElementById('change_grade');
@@ -169,14 +184,14 @@ const add_todos_form = document.getElementById('add_todos_form');
 
 fetch("/api/people").then(res => res.json()).then(data => {
   console.log(data);
-  people.innerHTML = `<ul>${renderPeople(data)}</ul>`;
+  people.innerHTML = `${renderPeople(data)}`;
 });
 
 //#3 -------------------------------------Render People
 function renderPeople(people) {
   return people.map((person) => {
     return `
-      <li class="person" onclick="getTodos('${person.id}', '${person.name}')">${person.name} , ${person.email}</li>
+      <li class="person" onclick="getTodos('${person.id}', '${person.name}')">  ${person.name} </li>
     `
   }).join("");
 }
@@ -186,7 +201,7 @@ function renderPeople(people) {
 function getTodos(id, name) {
   current_person_id = id;
   person_name.innerHTML = name;
-  add_todos.style.display = "block";
+  added_todos.style.display = "block";
   console.log(id)
 
   fetch(`/api/people/${id}/todos`).then(res => res.json()).then(data => {
@@ -217,17 +232,20 @@ function getTodos(id, name) {
 //# --------------this hits different-----------------------Render Todos
 
 function renderTodos(todos) {
-  //Myquestion = should this be todo or todos
   return todos
     .map(todo => {
       return `
-        <div><span>Name: ${todo.name}</span><br>
-        <button onClick="delete_todos('${todo.id}')">Delete Todos</button>
-        </div>
-      `;
+  <div style="display: flex; flex-direction: row;">
+    <span style="margin-right: 1px;">${todo.name}</span>
+    <button onClick="delete_todos('${todo.id}')" style="margin-left: 10px; background-color: transparent; border: white solid 1px; padding: 10px; border-radius: 10px; font-size: 10px; color: white;class="delete-button">  Delete Task</button>
+    <button onClick="delete_todos('${todo.id}')" style="margin-left: 10px; background-color: transparent; border: white solid 1px; padding: 10px; border-radius: 10px; font-size: 10px; color: white;class="delete-button">  Delete Person</button>
+  </div>
+`;
+
     })
     .join("");
 }
+
 
 
 
