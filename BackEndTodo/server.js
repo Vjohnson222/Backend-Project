@@ -129,7 +129,25 @@ app.delete("/api/todos/:todo_id", (req, res) => {
     res.json({ error: "failed" })
   })
 })
+//  Person Delete 
 
+app.delete("/api/people/:person_id", (req, res) => {
+  const person_id = Number(req.params.person_id);
+  console.log(req.params)
+
+  if(isNaN(person_id)) {
+      res.json({error: "person_id is not a number"});
+      return;
+  }
+
+  db.person.destroy({ where: { id: person_id} }).then((result) => {
+      res.json({status: "OK"})
+  }).catch((e) => {
+    res.json({ error: "failed" })
+  })
+})
+
+// compare 
 
 //#8 so this serves to update students and in my case todos.. perhaps an edit button
 
@@ -155,6 +173,6 @@ app.delete("/api/todos/:todo_id", (req, res) => {
 
 
 
-app.listen(3001, () => {
+app.listen(3000, () => {
   console.log('app started in port 3000');
 })//Done

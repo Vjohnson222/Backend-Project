@@ -40,6 +40,35 @@
   .delete-button {
    font-size: 2px;
   }
+  .form{
+      display: inline-block;
+      display: flex;
+      align-items: center;
+      margin-left: 240px;
+    
+    }
+    .label{
+      
+     display: inline-block; 
+     color:white;
+      width: 70px; 
+      margin-left: 25px;
+    }
+    .input{
+       display: inline-block; 
+      height: 30px; 
+      width: 200px;  
+      border-radius: 10px; 
+      background:transparent; 
+      color:white; 
+    }
+    .submit{
+      background:transparent; 
+      border: solid .5px white;
+      border-radius: 10px;
+      border-color: grey; color:white; width: 120px; padding: 5px;
+    }
+    </style>
   </style>
 </head>
 
@@ -72,7 +101,7 @@
           <a href="../index.html">Home</a>
         </li>
         <li>
-          <a href="../index2.html">Lights</a>
+          <a href="../lights.html">Lights</a>
         </li>
         <li>
           <a href="../cam.html">Camera</a>
@@ -101,22 +130,22 @@
         </li>
               </ul>
     </div>
+    <hr>
   </nav>
 <br>
-  <div> <h3 style="text-align: center; ">Cast And Crew</h3></div>
+  <div> <h3 style="text-align: center; ">ACTION!!! ......."LET'S MOVE IT PEOPLE" </h3></div>
 <br>
 <div class="review">      
 
-  <h3 class="script" style="margin-left:30px;  font-family: 'Dancing Script';">Talent<span style="color:transparent;">........................................</span> Tasks</h5>
-  <hr> <br>
-  <h4 style=" color:white;">Select Name to Assign and see individual tasks</h4>
+  <!-- <h3 class="script" style="margin-left:30px;  font-family: 'Dancing Script';">Talent<span style="color:transparent;">........................................</span> Tasks</h5> -->
   <br>
-
+  <div style=" margin-left: 320px; font-weight:lighter; font-size: 32px; color:white;">Select Name to Assign and See Individual Tasks</div>
+<hr> <br>
    <!-- -------------------------------- Column 1 --------------------------------  -->
-
+<div style="color: white;">  
 <div class="row">
   <div class="column1" >
- 
+ <br><br>
   <div  id="people"> </div>
 
   </div>
@@ -126,7 +155,11 @@
   
   <div class="column" >
     
-     <div   id="todos"> </div>
+    <div style="display: inline-block;" id="person_name2" >  </div><span><h4 style="display: inline-block; font-weight: lighter; font-family: inherit;"> &nbsp;Agrees to be Responsible For: </h4>
+    
+    </span >
+    <br>
+    <div id="todos"></div>
 
 
   <div id="added_todos" style="display:none">
@@ -140,31 +173,29 @@
         
     <form id="add_todos_form">
       
-   
-    <h5 style="font-style: italic;">Add to: <span id="person_name"></span></h5>
+      <h4 style=" font-weight: lighter; font-family: inherit; margin-left: 60px;">Add to: <span id="person_name"></span></h4>
+      <br>
 
-      <label for="name">New Todo:</label>
-      <input type="text" id="name" name="name" required>
-      <button type="submit">Add Todo</button>
+    <!-- <h5 style="font-style: italic;">Add to: <span id="person_name"></span></h5> -->
+
+      <!-- <label for="name">New Todo:</label> -->
+      <input class="input" type="text" id="name" name="name" required>
+      <button class="submit" type="submit">Add Todo</button>
     </form>
   </div>
 </div>
- 
+</div>
   
 </div>
-<!-- Note you will need 7 todo_id here to delete anything 
-Hey also try this, try not to change your face here in fat. only on jake
-it will make the transformation make sense later
 
-so for now
-complete the server then come back here and identify everything tha got changed there for here's purpose-->
-<!-- Thanks for the notes Frost  -->
 <script>
 // #1 The ID calls work very well so far
 const people = document.getElementById('people');
 const todos = document.getElementById('todos');
 const added_todos = document.getElementById('added_todos');
 const person_name = document.getElementById('person_name');
+const person_name2 = document.getElementById('person_name2');
+
 const add_todos_form = document.getElementById('add_todos_form');
         // const change_grade_div = document.getElementById('change_grade');
         // const change_grade_form = document.getElementById('change_students_grade');
@@ -184,7 +215,7 @@ const add_todos_form = document.getElementById('add_todos_form');
 
 fetch("/api/people").then(res => res.json()).then(data => {
   console.log(data);
-  people.innerHTML = `${renderPeople(data)}`;
+  people.innerHTML = `${renderPeople(data)} `;
 });
 
 //#3 -------------------------------------Render People
@@ -192,7 +223,7 @@ function renderPeople(people) {
   return people.map((person) => {
     return `
       <li class="person" onclick="getTodos('${person.id}', '${person.name}')">  ${person.name} </li>
-    `
+      `
   }).join("");
 }
 
@@ -201,6 +232,8 @@ function renderPeople(people) {
 function getTodos(id, name) {
   current_person_id = id;
   person_name.innerHTML = name;
+  person_name2.innerHTML = name;
+
   added_todos.style.display = "block";
   console.log(id)
 
@@ -209,6 +242,7 @@ function getTodos(id, name) {
     todos.innerHTML = `<div>${renderTodos(data.todos)}</div>`
   })
 }
+
 
 
         //#6---------------------DELETE    
@@ -221,15 +255,49 @@ function getTodos(id, name) {
     .then(res => res.json())
     .then(data => {
       console.log(data);
-      window.location = '/';
+      window.location = "index.html";
     })
     .catch(error => {
       console.error('Error deleting todo:', error);
     });
 }
+        //#6---------------------DELETE the Person    
+
+
+function delete_person(person_id) {
+  fetch(`/api/people/${person_id}`, {  
+    method: 'DELETE',
+    headers: { 'Content-Type': 'application/json' },
+  })
+    .then(res => res.json())
+    .then(data => {
+      console.log(data);
+      window.location = "./create_person/index.html";
+    })
+    .catch(error => {
+      console.error('Error deleting people:', error);
+    });
+}
 
 
 //# --------------this hits different-----------------------Render Todos
+
+// function renderTodos(todos) {
+//   return todos
+//     .map(todo => {
+//       return `
+//   <div style="display: flex; flex-direction: row;">
+//     <span style="margin-right: 1px;">${todo.name}</span>
+//     <button onClick="delete_todos('${todo.id}')" style="margin-left: 10px; background-color: transparent; border: white solid 1px; padding: 10px; border-radius: 10px; font-size: 10px; color: white;class="delete-button">  Delete Task</button>
+   
+//   </div>
+// `;
+
+//     })
+//     .join("");
+// }
+
+// compare 
 
 function renderTodos(todos) {
   return todos
@@ -238,14 +306,13 @@ function renderTodos(todos) {
   <div style="display: flex; flex-direction: row;">
     <span style="margin-right: 1px;">${todo.name}</span>
     <button onClick="delete_todos('${todo.id}')" style="margin-left: 10px; background-color: transparent; border: white solid 1px; padding: 10px; border-radius: 10px; font-size: 10px; color: white;class="delete-button">  Delete Task</button>
-    <button onClick="delete_todos('${todo.id}')" style="margin-left: 10px; background-color: transparent; border: white solid 1px; padding: 10px; border-radius: 10px; font-size: 10px; color: white;class="delete-button">  Delete Person</button>
+    <button onClick="delete_person('${todo.person_id}')" style="margin-left: 10px; background-color: transparent; border: white solid 1px; padding: 10px; border-radius: 10px; font-size: 10px; color: white;class="delete-button">  Delete Person</button>
   </div>
 `;
 
     })
     .join("");
 }
-
 
 
 

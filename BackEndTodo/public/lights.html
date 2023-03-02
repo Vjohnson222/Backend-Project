@@ -6,7 +6,39 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Home</title>
   <link rel="stylesheet" href="/create_person/styles.css" />
-  
+  <style>
+     .review{
+      color: white;
+    }
+    .form{
+      display: inline-block;
+      display: flex;
+      align-items: center;
+      margin-left: 240px;
+    
+    }
+    .label{
+      
+     display: inline-block; 
+     color:white;
+      width: 70px; 
+      margin-left: 25px;
+    }
+    .input{
+       display: inline-block; 
+      height: 30px; 
+      width: 200px;  
+      border-radius: 10px; 
+      background:transparent; 
+      color:white; 
+    }
+    .submit{
+      background:transparent; 
+      border: solid .5px white;
+      border-radius: 10px;
+      border-color: grey; color:white; width: 120px; padding: 5px;
+    }
+    </style>
 </head>
 <div class="black">heyyy</div>
 
@@ -34,27 +66,27 @@
       </div>
       <!-- links -->
       <ul class="links review3">
-        <li>
-          <a href="index.html">Home</a>
-        </li>
-        <li>
-          <a href="index2.html">Lights</a>
-        </li>
-        <li>
-          <a href="cam.html">Camera</a>
-        </li>
-        <li>
-          <div>
-            <!-- #1 - identified  -->
-              <span><a href="/create_person" >Action</a></span>
-             
-            </div>
-        </li>
-        
-      </ul>
+          <li>
+            <a href="index.html">Home</a>
+          </li>
+          <li>
+            <a href="lights.html">Lights</a>
+          </li>
+          <li>
+            <a href="cam.html">Camera</a>
+          </li>
+         
+            <div>
+              <!-- #1 - identified  -->
+                <span><a href="/create_person" >Action</a></span>
+               
+              </div>
+          </li>
+          
+        </ul>
       <!-- social media -->
       <br>
-      <ul class="social-icons">
+      <!-- <ul class="social-icons">
         <li>
           <a href="https://www.facebook.com" target="_blank">
             <i class="fab fa-facebook"></i>
@@ -70,7 +102,7 @@
             <i class="fab fa-linkedin"></i>
           </a>
         </li>
-              </ul>
+              </ul> -->
     </div>
   </nav>
   <!-- Nav ends Here  -->
@@ -90,45 +122,35 @@
 <article class="review">  
 
   <div style="text-align: center; "> 
-    <h2>As we know ...... "It Takes a whole Village to Raise a Show"</h2>
+    <h3>As we know ...... "It Takes a whole Village to Raise a Show"</h2>
     <br> <hr> <br>
-    <h3>Through this platform, we as a team get to pull together and contribute our </h3>
-    <h3>individual talents in order to make our show the amazing success that it's sure to be.  </h3>  
+    <h3>Through this platform we as a team get to pull together and contribute our </h3>
+    <h3> talents in order to make our show the amazing success that it's sure to be.  </h3>  
+    </div>
+    <div >
+      <br> <hr style="color: black">
     </div>
     <br><br>
 
-    <!-- The good form  -->
+  
+    <form class="form"  id="create_person"  autocomplete="off">
+  
+      <div >
+        <label class="label">Name:</label>
+        <input class="input" type="text" name="name" required>
+        <label class="label" >Email:</label>
+        <input class="input" type="text" name="email" required>
 
-    <form id="create_person"  autocomplete="off">
-  
-      <div style="display: flex; align-items: center;">
-        <label style="display: inline-block; width: 100px;">Name:</label>
-        <input type="text" name="name" style="display: inline-block; width: 200px; background:transparent; color:white; " required>
-        <label style="display: inline-block; width: 100px;">Email:</label>
-        <input type="text" name="email" style="display: inline-block; width: 200px; background:transparent; color:white; " required>
-        <button type="submit" style="background:transparent; border-style: solid; border-color: grey; color:white; width: 120px; padding: 5px;">Submit</button>
-      </div>
-    </form>
-    <hr><hr><hr>
-    <!-- The new and cute one Butttt  -->
-    <!-- <form id="create_person"  autocomplete="off">
-  
-      <div style="display: flex; align-items: center; margin-left: 240px;">
-        <label style="display: inline-block; color:white;  width: 70px; margin-left: 25px;">Name:</label>
-        <input type="text" name="name" style="display: inline-block; height: 30px; width: 200px;  border-radius: 10px; background:transparent; color:white; " required>
-        <label style="display: inline-block; color:white; width: 70px; margin-left: 25px;">Email:</label>
-        <input type="text" name="name" style="display: inline-block; height: 30px; width: 200px;  border-radius: 10px; background:transparent; color:white; " required>
         <button type="submit" style="display: inline-block; border-radius: 10px; border: solid rgb(119, 114, 145) 0.1px; width: 60px; margin-left: 25px; background:transparent; color:white; padding: 5px; width: 200px;">Submit</button>
       </div>
-        </form> -->
+        </form>
     <br><br>
     <ol>
-      <li>Enter your name and Email address below</li>
-      <li>Hit Submit</li>
+      <li>Submit your full Name and Email address</li>
       <li> You will be redirected to a page that provides details on who's doing what </li>
       <li>Click on your name and add your contribution in the area provided</li>
       <li>You can also click on any name to see what's already being covered</li>
-     <li>  Lastly,check back daily to see if the production team has assigned a needed task your way</li> 
+     <li>Lastly, Check back daily to see if the production team has assigned a needed task your way</li> 
     </ol>
 <!-- -------------------------------------------------------- -->
   <!-- We have all of these style that perhaps need to go elsewhere  -->

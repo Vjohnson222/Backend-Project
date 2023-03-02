@@ -5,8 +5,58 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Home</title>
-  <link rel="stylesheet" href="/create_person/styles.css" />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+
+    
   
+ 
+    /* Self- Vid  */
+    .container{
+      width: min(100%,1200px);
+      display: flex;
+      flex-wrap: wrap;
+      min-height: 400px;
+    }
+    .container > *{
+      flex: 1 1 0;
+    }
+    .leftPanel{
+      padding: 10px;
+    }
+    video{
+      height: 100%;
+      width: 100%;
+         border: 2px solid #dcdcdc; /* width and color of the border */
+         transform: scaleX(-1);
+           filter: FlipH;
+
+    }
+    canvas{
+      height: 80%;
+      width: 90%;
+      margin-left: 150px;
+      border: 20px solid #dcdcdc; /* width and color of the border */
+      transform: scaleX(-1);
+           filter: FlipH;
+
+    }
+    @media screen and (max-width: 670px){
+      .container{
+        flex-flow: column;
+        min-height: auto;
+      }
+    }
+
+    .review{
+      color: white;
+    }
+
+
+        </style>
+  <link rel="stylesheet" href="/create_person/styles.css" />
+
 </head>
 <div class="black">heyyy</div>
 
@@ -17,7 +67,7 @@
       <!-- nav header -->
       <div class="nav-header">
 
-        <svg class="svg" height="120" width="140" left="-20px">            
+        <svg class="svg" height="120" width="140" left="-20px">
           <defs>
             <filter id="f3" x="0" y="0" width="200%" height="200%">
               <feOffset result="offOut" in="SourceAlpha" dx="20" dy="20" />
@@ -26,33 +76,40 @@
             </filter>
           </defs>
           <rect width="90" height="70" stroke="white" stroke-width="2"
-          fill="grey" filter="url(#f3)" />
+            fill="grey" filter="url(#f3)" />
+          <foreignObject x="10" y="10" height="120" width="140" left="-820px">
+            <div class="leftPanel">
+              <video autoplay></video>
+            </div>
+          </foreignObject>
         </svg>
+        
          <button class="nav-toggle">
           <i class="fas fa-bars"></i>
         </button>
         
       </div>
       <!-- links -->
-      <  <ul class="links review3">
-        <li>
-          <a href="index.html">Home</a>
-        </li>
-        <li>
-          <a href="index2.html">Lights</a>
-        </li>
-        <li>
-          <a href="cam.html">Camera</a>
-        </li>
-        <li>
-          <div>
-            <!-- #1 - identified  -->
-              <span><a href="/create_person" >Action</a></span>
-             
-            </div>
-        </li>
-        
-      </ul>
+       <ul class="links review3">
+      
+          <li>
+            <a href="index.html">Home</a>
+          </li>
+          <li>
+            <a href="lights.html">Lights</a>
+          </li>
+          <li>
+            <a href="cam.html">Camera</a>
+          </li>
+         
+            <div>
+              <!-- #1 - identified  -->
+                <span><a href="/create_person" >Action</a></span>
+               
+              </div>
+          </li>
+          
+        </ul>
       <!-- social media -->
       <br>
       <ul class="social-icons">
@@ -79,23 +136,59 @@
 
   <br>
   <div>
-      <h3 style="text-align: center; font-size: 30px;">Welcome Cast And Crew</h3>
+    <h3 style="text-align: center; font-size: 35px;">Welcome Cast And Crew... Say Cheese.</h3>
 
   </div>
-<br>
+  <br>
 
 
 <article class="review">  
 
-  <div>
-    <h3 style="text-align: center; font-size: 43px;">It Takes a whole Village to Raise a Show</h3>
+  <div >
+    <h4 style=" font-size: 25px; text-align: center;"> Take a quick photo so that we can add it to our production wall</h4>
+<br>
+    <h4 style=" display: inline-block; margin-left: 190px; font-size: 25px; ">  When you're satisfied - Right Click and save the image. Then email it to us right here.&nbsp;</h3>
+      <div class="w3-col s4 contacts3"  style="display: inline-block;">
+        <a href="johnsonbpo@yahoo.com"  style="display: inline-block;" class=" w3-b w3-block mailtoui dot3"> <i class="fa fa-envelope" style="display: inline-block; font-size:36px;color:white"> </i></a>
+    </div>
+   
+  <!-- <h4 style="text-align: center;  font-size: 25px; display: inline-block;"> Then email it to us right here.</h3> <i class="fa fa-envelope" style="font-size:36px;color:white"></i> -->
+  
+
+
 </div>
-    
-<br>  <h3 ><a style="color: white; font-size: 28px; margin-left: 67%;"href="index2.html">Lights!</a> </h3>
-
-<img class="scene" src="aaa.png" alt=""> </div>
-
+	<div class = 'container' >
+	
+		<div class = 'rightPanel'>
+      <br>
+			<canvas>
+			</canvas>
+		</div>
+	</div>
 </article>
-</body>
 
+
+
+<script src='https://cdn.jsdelivr.net/npm/mailtoui@1.0.2/dist/mailtoui-min.js'></script>
+
+	<script defer = "">
+		const video = document.querySelector('video');
+		const canvas = document.querySelector('canvas');
+		const c = canvas.getContext('2d');
+		
+		async function startWebCam(){
+			try{
+				const stream = await navigator.mediaDevices.getUserMedia({
+					video: true
+				})
+				video.srcObject = stream;
+			}catch(err){
+				console.log(err);
+			}
+		}
+		startWebCam();
+		window.addEventListener('click',() => {
+			c.drawImage(video,0,0,canvas.width,canvas.height);
+		});
+	</script>
 </html>
