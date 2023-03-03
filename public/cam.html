@@ -171,12 +171,12 @@
 
 <script src='https://cdn.jsdelivr.net/npm/mailtoui@1.0.2/dist/mailtoui-min.js'></script>
 
-	<script defer = "">
+	<script image = "">
 		const video = document.querySelector('video');
 		const canvas = document.querySelector('canvas');
-		const c = canvas.getContext('2d');
+		const take = canvas.getContext('2d');
 		
-		async function startWebCam(){
+		async function theCamera(){
 			try{
 				const stream = await navigator.mediaDevices.getUserMedia({
 					video: true
@@ -186,9 +186,9 @@
 				console.log(err);
 			}
 		}
-		startWebCam();
+		theCamera();
 		window.addEventListener('click',() => {
-			c.drawImage(video,0,0,canvas.width,canvas.height);
+			take.drawImage(video,0,0,canvas.width,canvas.height);
 		});
 	</script>
 </html>
