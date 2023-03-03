@@ -1,4 +1,4 @@
-![Header Banner](https://github.com/Vjohnson222/Backend-Project/blob/main/BackEndTodo/face.PNG?raw=true)
+![Header Banner](https://github.com/Vjohnson222/Backend-Project/blob/main/face.PNG?raw=true)
 
 
 
@@ -31,19 +31,16 @@ Show Time serves to support the efforts and talent of an organization as they fa
 ---
 Below Please find a visual representation  reflective of the navigation bar's layout for each page visited 
 > HOME PAGE
-![result-1](https://github.com/Vjohnson222/Backend-Project/blob/main/BackEndTodo/face.PNG?raw=true)
+![result-1](https://github.com/Vjohnson222/Backend-Project/blob/main/face.PNG?raw=true)
 
 > LIGHTS 
-![result-1](https://github.com/Vjohnson222/Backend-Project/blob/main/BackEndTodo/lights.PNG?raw=true)
+![result-1](https://github.com/Vjohnson222/Backend-Project/blob/main/lights.PNG?raw=true)
 
 > CAMERA
-![result-1](https://github.com/Vjohnson222/Backend-Project/blob/main/BackEndTodo/camera.PNG?raw=true)
+![result-1](https://github.com/Vjohnson222/Backend-Project/blob/main/camera.PNG?raw=true)
 
 > ACTION
-![result-1](https://github.com/Vjohnson222/Backend-Project/blob/main/BackEndTodo/action.PNG?raw=true)
+![result-1](https://github.com/Vjohnson222/Backend-Project/blob/main/action.PNG?raw=true)
 
 
-<<<<<<< HEAD
 
-=======
->>>>>>> 0bc58987b1c7efe9ffca8cb7206e88cc2326e34f
