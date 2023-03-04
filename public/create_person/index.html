@@ -148,6 +148,7 @@
  <br><br>
   <div  id="people"> </div>
 
+
   </div>
   
   <!-- -------------------------------- Column 2 -------------------------------- -->
@@ -272,7 +273,7 @@ function delete_person(person_id) {
     .then(res => res.json())
     .then(data => {
       console.log(data);
-      window.location = "./create_person/index.html";
+      window.location = "index.html";
     })
     .catch(error => {
       console.error('Error deleting people:', error);
